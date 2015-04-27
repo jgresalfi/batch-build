@@ -12,6 +12,9 @@ var app = express();
 
 var db = require('./db_connect');
 
+//global template variables
+app.locals.title = "Batch Builder";
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
