@@ -3,7 +3,7 @@ var express = require('express');
 var app = express.Router();
 var UserController = require("../userController");
 var UserModel = require("../models/user");
-var Todo = require("../models/todo");
+var Batch = require("../models/batch");
 
 // Send the error message back to the client
 var sendError = function (req, res, err, message) {
@@ -23,13 +23,13 @@ var getUserTasks = function (userId) {
 
   console.log('Another promise to let the calling function know when the database lookup is complete');
 
-  Todo.find({user: userId}, function (err, tasks) {
+  Batch.find({user: userId}, function (err, tasks) {
     if (!err) {
-      console.log('Tasks found = ' + tasks.length);
+      console.log('Batches found = ' + batches.length);
       console.log('No errors when looking up tasks. Resolve the promise (even if none were found).');
       deferred.resolve(tasks);
     } else {
-      console.log('There was an error looking up tasks. Reject the promise.');
+      console.log('There was an error looking up batch list. Reject the promise.');
       deferred.reject(err);
     }
   })
@@ -75,10 +75,10 @@ app.post("/login", function (req, res) {
       console.log('Find any tasks that are assigned to the user');
 
       // Now find the tasks that belong to the user
-      getUserTasks(validUser._id)
-        .then(function (tasks) {
+      getUserBatches(validUser._id)
+        .then(function (batches) {
           // Render the todo list
-          res.redirect("/todo/list");
+          res.redirect("/userbatches/list");
         })
         .fail(function (err) {
           sendError(req, res, {errors: err.message}, "Failed")
@@ -96,10 +96,10 @@ app.get("/profile", function (req, res) {
   var user = UserController.getCurrentUser();
 
   if (user !== null) {
-    getUserTasks(user._id).then(function (tasks) {
+    getUserBatches(user._id).then(function (batches) {
       res.render("userProfile", {
         username: user.username,
-        tasks: tasks
+        batches: batches
       });
     });
   } else {
