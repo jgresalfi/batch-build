@@ -17,8 +17,8 @@ var sendError = function (req, res, err, message) {
   });
 };
 
-// Retrieve all tasks for the current user
-var getUserTasks = function (userId) {
+// Retrieve all batches for the current user
+var getUserBatches = function (userId) {
   var deferred = Q.defer();
 
   console.log('Another promise to let the calling function know when the database lookup is complete');
@@ -52,7 +52,7 @@ app.post("/register", function (req, res) {
     if (err) {
       sendError(req, res, err, "Failed to register user");
     } else {
-      res.redirect("/todo");
+      res.redirect("/list");
     }
   });
 });
