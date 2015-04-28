@@ -23,11 +23,11 @@ var getUserBatches = function (userId) {
 
   console.log('Another promise to let the calling function know when the database lookup is complete');
 
-  Batch.find({user: userId}, function (err, tasks) {
+  Batch.find({user: userId}, function (err, batches) {
     if (!err) {
       console.log('Batches found = ' + batches.length);
-      console.log('No errors when looking up tasks. Resolve the promise (even if none were found).');
-      deferred.resolve(tasks);
+      console.log('No errors when looking up batches. Resolve the promise (even if none were found).');
+      deferred.resolve(batches);
     } else {
       console.log('There was an error looking up batch list. Reject the promise.');
       deferred.reject(err);
@@ -39,7 +39,7 @@ var getUserBatches = function (userId) {
 
 
 // Handle the request for the registration form
-app.get("/register", function (req, res) {
+app.get("/", function (req, res) {
   res.render("register");
 });
 
