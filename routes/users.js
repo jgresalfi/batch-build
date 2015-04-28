@@ -3,7 +3,7 @@ var express = require('express');
 var app = express.Router();
 var UserController = require("../userController");
 var UserModel = require("../models/user");
-var Batch = require("../models/batch");
+var Todo = require("../models/batch");
 
 // Send the error message back to the client
 var sendError = function (req, res, err, message) {
@@ -17,19 +17,19 @@ var sendError = function (req, res, err, message) {
   });
 };
 
-// Retrieve all batches for the current user
-var getUserBatches = function (userId) {
+// Retrieve all tasks for the current user
+var getUserTasks = function (userId) {
   var deferred = Q.defer();
 
   console.log('Another promise to let the calling function know when the database lookup is complete');
 
-  Batch.find({user: userId}, function (err, batches) {
+  Todo.find({user: userId}, function (err, tasks) {
     if (!err) {
-      console.log('Batches found = ' + batches.length);
-      console.log('No errors when looking up batches. Resolve the promise (even if none were found).');
-      deferred.resolve(batches);
+      console.log('Tasks found = ' + tasks.length);
+      console.log('No errors when looking up tasks. Resolve the promise (even if none were found).');
+      deferred.resolve(tasks);
     } else {
-      console.log('There was an error looking up batch list. Reject the promise.');
+      console.log('There was an error looking up tasks. Reject the promise.');
       deferred.reject(err);
     }
   })
@@ -39,7 +39,7 @@ var getUserBatches = function (userId) {
 
 
 // Handle the request for the registration form
-app.get("/", function (req, res) {
+app.get("/register", function (req, res) {
   res.render("register");
 });
 
@@ -52,7 +52,7 @@ app.post("/register", function (req, res) {
     if (err) {
       sendError(req, res, err, "Failed to register user");
     } else {
-      res.redirect("/list");
+      res.redirect("/");
     }
   });
 });
@@ -75,10 +75,10 @@ app.post("/login", function (req, res) {
       console.log('Find any tasks that are assigned to the user');
 
       // Now find the tasks that belong to the user
-      getUserBatches(validUser._id)
-        .then(function (batches) {
+      getUserTasks(validUser._id)
+        .then(function (tasks) {
           // Render the todo list
-          res.redirect("/userbatches/list");
+          res.redirect("/todo/list");
         })
         .fail(function (err) {
           sendError(req, res, {errors: err.message}, "Failed")
@@ -96,10 +96,10 @@ app.get("/profile", function (req, res) {
   var user = UserController.getCurrentUser();
 
   if (user !== null) {
-    getUserBatches(user._id).then(function (batches) {
+    getUserTasks(user._id).then(function (tasks) {
       res.render("userProfile", {
         username: user.username,
-        batches: batches
+        tasks: tasks
       });
     });
   } else {

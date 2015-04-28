@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <% include partials/head.ejs %>
   </head>
+
   <body>
 
     <h1>Register to create tasks</h1>
 
-    <form method="POST" action="/register" id="registerForm">
-      <div class="formfield">
-        <div class="formfield--prompt">Username:</div>
-        <input type="text" id="username" name="username">
-      </div>
-      <div class="formfield">
-        <div class="formfield--prompt">Password:</div>
-        <input type="password" id="password" name="password">
-      </div>
-      <input class="submitButton" type="submit"></input>
-    </form>
+    <% include partials/reg_form.ejs %>
+
+    <% include partials/scripts.ejs %>
 
   </body>
+
 </html>
