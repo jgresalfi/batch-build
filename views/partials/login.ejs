@@ -1,6 +1,11 @@
-<h1>Register to create, view or modify batches</h1>
-
-    <form method="POST" action="/user/register" id="registerForm">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log into your account.</title>
+</head>
+<body>
+  <form method="POST" action="/userProfile" id="registerForm">
       <div class="formfield">
         <div class="formfield--prompt">Username:</div>
         <input type="text" id="username" name="username">
@@ -11,3 +16,6 @@
       </div>
       <input class="submitButton" type="submit"></input>
     </form>
+    <a href="/register" class="register">Or click here to register...</a>
+</body>
+</html>
