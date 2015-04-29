@@ -78,7 +78,7 @@ app.post("/login", function (req, res) {
       getUserTasks(validUser._id)
         .then(function (tasks) {
           // Render the todo list
-          res.redirect("/todo/list");
+          res.redirect("/form");
         })
         .fail(function (err) {
           sendError(req, res, {errors: err.message}, "Failed")
