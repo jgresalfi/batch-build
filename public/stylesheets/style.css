@@ -15,3 +15,16 @@ a {
   color: white;
   font-weight: 200;
 }
+
+.pitcher_pic {
+  float: left;
+  margin-top: 5px;
+}
+
+#username {
+  min-width: 250px;
+}
+
+#password {
+  min-width: 250px;
+}
