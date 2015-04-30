@@ -1,4 +1,5 @@
-.login_page {
+.login_page,
+.reg_page {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
@@ -6,6 +7,12 @@
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.reg_tagline {
+  color: white;
+  font-weight: 200;
+  margin-top: 15px;
 }
 
 .form_page {
