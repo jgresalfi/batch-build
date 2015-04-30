@@ -1,8 +1,11 @@
 
 .form_page {
+  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
   background: url("../images/whisk.jpg") no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
 }
 
