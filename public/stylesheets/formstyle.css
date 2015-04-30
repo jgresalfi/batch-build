@@ -1,0 +1,34 @@
+
+.form_page {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: url("../images/whisk.jpg") no-repeat;
+  background-size: cover;
+}
+
+label {
+  color: white;
+}
+
+h6 {
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+.appTitle {
+  color: white;
+  font-weight: 200;
+}
+
+.pitcher_pic {
+  float: left;
+  margin-top: 5px;
+}
+
+.appTitle_icon {
+    margin-bottom: 11px;
+}
