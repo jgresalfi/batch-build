@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% include partials/head.ejs %>
+    <% include partials/formhead.ejs %>
   </head>
-  <body>
+  <body class="form_page">
+
+    <div class="row appTitle_icon">
+      <img src="../images/measure-cup50.png" alt="measuring_cup_pic" class="pitcher_pic">
+      <h2 class="appTitle small-3 column end">BatchBuilder</h2>
+    </div>
 
     <!-- cook_date: {type: Date, required: true, default: Date.now }, -->
     <!-- exp_date: {type: Date, required: true, default: '' }, -->
@@ -141,7 +146,7 @@
 
       <div class="row">
         <div class="large-12 columns">
-          <ul class="button-group round even-2">
+          <ul class="button-group even-2">
             <li><input class="button" type="submit" value="Submit"></li>
             <li><input class="button" type="edit" value="Edit"></li>
           </ul>

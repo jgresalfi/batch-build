@@ -1,18 +1,17 @@
-.login_page {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: white;
-  background: url("../images/whisk.jpg") no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
 .form_page {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
   background: url("../images/whisk.jpg") no-repeat;
   background-size: cover;
+}
+
+label {
+  color: white;
+}
+
+h6 {
+  color: white;
 }
 
 a {
@@ -32,16 +31,4 @@ a {
 
 .appTitle_icon {
     margin-bottom: 11px;
-}
-
-#username {
-  min-width: 250px;
-}
-
-#password {
-  min-width: 250px;
-}
-
-.register_div {
-  margin-top: 10px;
 }
