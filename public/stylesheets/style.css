@@ -3,6 +3,8 @@
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
   background: url("../images/whisk.jpg") no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -21,4 +23,25 @@ a {
 .appTitle {
   color: white;
   font-weight: 200;
+}
+
+.pitcher_pic {
+  float: left;
+  margin-top: 5px;
+}
+
+.appTitle_icon {
+    margin-bottom: 11px;
+}
+
+#username {
+  min-width: 250px;
+}
+
+#password {
+  min-width: 250px;
+}
+
+.register_div {
+  margin-top: 10px;
 }
