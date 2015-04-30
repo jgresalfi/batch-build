@@ -1,8 +1,16 @@
-body {
+.login_page {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
+  background: url("../images/whisk.jpg") no-repeat;
+  background-size: cover;
 }
 
 a {
   color: #00B7FF;
+}
+
+.appTitle {
+  color: white;
+  font-weight: 200;
 }

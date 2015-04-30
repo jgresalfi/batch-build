@@ -14,7 +14,8 @@ var app = express();
 var db = require('./db_connect');
 
 //global template variables
-app.locals.title = "Batch Builder";
+app.locals.title = "Walker Creek Confections";
+app.locals.appTitle = "BatchBuilder";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
