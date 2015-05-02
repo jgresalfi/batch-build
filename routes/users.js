@@ -3,7 +3,7 @@ var express = require('express');
 var app = express.Router();
 var UserController = require("../userController");
 var UserModel = require("../models/user");
-var Todo = require("../models/batch");
+var BatchModel = require("../models/batch");
 
 // Send the error message back to the client
 var sendError = function (req, res, err, message) {
@@ -23,7 +23,7 @@ var getUserTasks = function (userId) {
 
   console.log('Another promise to let the calling function know when the database lookup is complete');
 
-  Todo.find({user: userId}, function (err, tasks) {
+  BatchModel.find({user: userId}, function (err, tasks) {
     if (!err) {
       console.log('Tasks found = ' + tasks.length);
       console.log('No errors when looking up tasks. Resolve the promise (even if none were found).');
