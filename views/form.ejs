@@ -39,17 +39,17 @@
       <div class="row">
         <div class="large-4 columns">
           <label>Production Date
-            <input id="cook_date" type="date" placeholder="" />
+            <input name="cook_date" id="cook_date" type="date" placeholder="" />
           </label>
         </div>
         <div class="large-4 columns">
           <label>Expiration Date
-            <input id="exp_date" type="date" placeholder="" />
+            <input name="exp_date" id="exp_date" type="date" placeholder="" />
           </label>
         </div>
         <div class="large-4 columns">
           <label>Cook order
-            <input id="cook_order" type="number" placeholder="" />
+            <input name="cook_order" id="cook_order" type="number" placeholder="" />
           </label>
         </div>
       </div>
@@ -57,7 +57,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Batch
-            <input id="batch" type="text" placeholder="" />
+            <input name="batch" id="batch" type="text" placeholder="" />
           </label>
         </div>
       </div>
@@ -65,10 +65,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Prepared By</label>
-          <input id="checkbox1" type="checkbox"><label for="checkbox1">Bob</label>
-          <input id="checkbox2" type="checkbox"><label for="checkbox2">Jen</label>
-          <input id="checkbox3" type="checkbox"><label for="checkbox3">Ken</label>
-          <input id="checkbox4" type="checkbox"><label for="checkbox4">Sam</label>
+          <input name="user" id="user" type="text" placeholder="" />
         </div>
       </div>
 
@@ -91,7 +88,7 @@
               <label for="right-label" class="right inline">Sugar</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="sugarId" placeholder="lot infomation">
+              <input type="text" name="sugarId" id="sugarId" placeholder="lot infomation">
             </div>
           </div>
         </div>
@@ -104,7 +101,7 @@
               <label for="right-label" class="right inline">Butter</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="butterId" placeholder="lot infomation">
+              <input type="text" name="butterId" id="butterId" placeholder="lot infomation">
             </div>
           </div>
         </div>
@@ -117,7 +114,7 @@
               <label for="right-label" class="right inline">Almounds</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="almondId" placeholder="lot infomation">
+              <input type="text" id="almondId" name="almondId" placeholder="lot infomation">
             </div>
           </div>
         </div>
@@ -130,7 +127,7 @@
               <label for="right-label" class="right inline">Dust</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="dustId" placeholder="lot infomation">
+              <input type="text" name="dustId" id="dustId" placeholder="lot infomation">
             </div>
           </div>
         </div>
@@ -139,7 +136,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Production Notes
-            <textarea placeholder=""></textarea>
+            <textarea name="notes" id="notes"  placeholder=""></textarea>
           </label>
         </div>
       </div>
