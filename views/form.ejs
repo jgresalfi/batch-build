@@ -27,7 +27,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Type of Candy
-            <select name="candyType">
+            <select name="candyType" abide>
               <option id="candyType" value="toffee">Toffee</option>
               <option value="caramel">Caramel</option>
               <option value="praline">Praline</option>
@@ -39,17 +39,17 @@
       <div class="row">
         <div class="large-4 columns">
           <label>Production Date
-            <input name="cook_date" id="cook_date" type="date" placeholder="" />
+            <input name="cook_date" id="cook_date" type="date" placeholder=""  required/>
           </label>
         </div>
         <div class="large-4 columns">
           <label>Expiration Date
-            <input name="exp_date" id="exp_date" type="date" placeholder="" />
+            <input name="exp_date" id="exp_date" type="date" placeholder=""  required/>
           </label>
         </div>
         <div class="large-4 columns">
           <label>Cook order
-            <input name="cook_order" id="cook_order" type="number" placeholder="" />
+            <input name="cook_order" id="cook_order" type="number" placeholder=""  required/>
           </label>
         </div>
       </div>
@@ -57,7 +57,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Batch
-            <input name="batch" id="batch" type="text" placeholder="" />
+            <input name="batch" id="batch" type="text" placeholder=""  required/>
           </label>
         </div>
       </div>
@@ -65,7 +65,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Prepared By</label>
-          <input name="user" id="user" type="text" placeholder="" />
+          <input name="user" id="user" type="text" placeholder=""  required/>
         </div>
       </div>
 
@@ -88,7 +88,7 @@
               <label for="right-label" class="right inline">Sugar</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" name="sugarId" id="sugarId" placeholder="lot infomation">
+              <input type="text" name="sugarId" id="sugarId" placeholder="lot infomation" required>
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
               <label for="right-label" class="right inline">Butter</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" name="butterId" id="butterId" placeholder="lot infomation">
+              <input type="text" name="butterId" id="butterId" placeholder="lot infomation" required>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@
               <label for="right-label" class="right inline">Almonds</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="almondId" name="almondId" placeholder="lot infomation">
+              <input type="text" id="almondId" name="almondId" placeholder="lot infomation" required>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@
               <label for="right-label" class="right inline">Chocolate</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="chocolateId" name="chocolateId" placeholder="lot infomation">
+              <input type="text" id="chocolateId" name="chocolateId" placeholder="lot infomation" required>
             </div>
           </div>
         </div>
@@ -137,10 +137,10 @@
         <div class="small-12 columns">
           <div class="row">
             <div class="small-3 columns">
-              <label for="right-label" class="right inline">Dust</label>
+              <label for="right-label" class="right inline">Almond Dust</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" name="dustId" id="dustId" placeholder="lot infomation">
+              <input type="text" name="dustId" id="dustId" placeholder="lot infomation" required>
             </div>
           </div>
         </div>
