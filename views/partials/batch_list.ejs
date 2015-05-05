@@ -2,8 +2,15 @@
 
     <a href="/form">Create a new batch</a>
 
+    <ul class="accordion" data-accordion>
+
     <% for (var i = 0; i < batches.length; i++) { %>
       <% var currentBatch = batches[i]; %>
+
+      <li class="accordion-navigation">
+        <a href="#panel_<%= currentBatch._id %>">Batch: <%= currentBatch.batch %></a>
+        <div id="panel_<%= currentBatch._id %>" class="content">
+
       <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
       <div class="batch" id="batch_<%= currentBatch._id %>">
         <div>
@@ -17,6 +24,9 @@
         </div>
         <div>
           Candy Type: <%= currentBatch.candyType %>
+        </div>
+        <div>
+          Batch Id: <%= currentBatch.batch %>
         </div>
         <div>
           Sugar: <%= currentBatch.sugarId %>
@@ -45,6 +55,12 @@
           <a class="editButton" id="<%= currentBatch._id %>">Edit</a>
         </div>
       </div>
+
+        </div>
+      </li>
+
     <% } %>
 
+
+    </ul>
   </body>
