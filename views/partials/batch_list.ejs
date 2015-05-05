@@ -5,7 +5,7 @@
     <% for (var i = 0; i < batches.length; i++) { %>
       <% var currentBatch = batches[i]; %>
       <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
-      <div class="todo-item" id="batch_<%= currentBatch._id %>">
+      <div class="batch" id="batch_<%= currentBatch._id %>">
         <div>
           Cook Date: <%= currentBatch.cook_date %>
         </div>
