@@ -1,5 +1,5 @@
     <a href="/form">Create a new batch</a>
-    <h1><%= message %></h1>
+
 
     <% for (var i = 0; i < batches.length; i++) { %>
       <% var currentBatch = batches[i]; %>
@@ -39,8 +39,8 @@
         </div>
       </div>
         <div class="actions">
-          <a class="deleteButton" id="<%= currentTask._id %>">Delete</a>
-          <a class="editButton" id="<%= currentTask._id %>">Edit</a>
+          <a class="deleteButton" id="<%= currentBatch._id %>">Delete</a>
+          <a class="editButton" id="<%= currentBatch._id %>">Edit</a>
         </div>
       </div>
     <% } %>
