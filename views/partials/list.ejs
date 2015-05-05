@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include head.ejs %>
+  </head>
+  <body>
+    <a href="/form">Create a new batch</a>
+    <h1><%= message %></h1>
+
+    <% for (var i = 0; i < batches.length; i++) { %>
+      <% var currentBatch = batches[i]; %>
+      <div class="todo-item" id="todo_<%= currentBatch._id %>">
+        <div>
+          Cook Date: <%= currentBatch.cook_date %>
+        </div>
+        <div>
+          Expiration Date: <%= currentBatch.exp_date %>
+        </div>
+        <div>
+          Notes: <%= currentBatch.notes %>
+        </div>
+        <div>
+          Candy Type: <%= currentBatch.candyType %>
+        </div>
+        <div>
+          Sugar: <%= currentBatch.sugarId %>
+        </div>
+        <div>
+          Butter: <%= currentBatch.butterId %>
+        </div>
+        <div>
+          Almonds: <%= currentBatch.almondId %>
+        </div>
+        <div>
+          Chocolate: <%= currentBatch.chocolateId %>
+        </div>
+        <div>
+          Dust: <%= currentBatch.dustId %>
+        </div>
+        <div>
+          Cook Order: <%= currentBatch.cook_order %>
+        </div>
+        <div>
+          User: <%= currentBatch.user %>
+        </div>
+      </div>
+        <div class="actions">
+          <a class="deleteButton" id="<%= currentTask._id %>">Delete</a>
+          <a class="editButton" id="<%= currentTask._id %>">Edit</a>
+        </div>
+      </div>
+    <% } %>
+
+    <% include scripts.ejs %>
+
+  </body>
+</html>
