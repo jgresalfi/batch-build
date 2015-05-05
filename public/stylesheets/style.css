@@ -49,6 +49,10 @@ a {
     margin-bottom: 11px;
 }
 
+#fullname {
+  min-width: 250px;
+}
+
 #username {
   min-width: 250px;
 }

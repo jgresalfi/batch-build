@@ -5,12 +5,6 @@ var batchList = [];
 
 var Batch = require('../models/batch');
 
-// /* GET list page. */
-// router.get('/', function(req, res, next) {
-//   res.render('list');
-
-// });
-
 // Send the batch list back to the client via the for loop in the todoList.ejs
 var sendBatchList = function (req, res, next) {
   console.log("Send batch list called");

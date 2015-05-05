@@ -1,23 +1,29 @@
 <body class="reg_page">
   <div class="row appTitle_icon">
     <img src="../images/measure-cup50.png" alt="measuring_cup_pic" class="pitcher_pic">
-    <h2 class="appTitle small-3 column end">BatchBuilder</h2>
-    <h5 class="reg_tagline small-12 column end">Register as a user for access...</h5>
+    <h2 class="appTitle small-3 column">BatchBuilder</h2>
+    <h5 class="reg_tagline small-12 column">Register as a user for access...</h5>
   </div>
-  <div class="row">
-    <form method="POST" action="/users/register" id="registerForm">
-      <div class="formfield">
-        <div class="small-4 columns end">
+  <form method="POST" action="/users/register" id="registerForm">
+    <div class="formfield">
+      <div class="row">
+        <div class="small-4 columns">
+          <input type="text" id="fullname" name="fullname" placeholder="Enter your name..." required>
+        </div>
+      </div>
+    </div>
+    <div class="formfield">
+      <div class="row">
+        <div class="small-4 columns">
           <input type="text" id="username" name="username" placeholder="Create username..." required>
         </div>
       </div>
-  </div>
+    </div>
     <div class="row">
       <div class="formfield">
-          <!-- <div class="formfield--prompt small-1 columns">Password:</div> -->
-          <div class="small-4 columns end">
-            <input type="password" id="password" name="password" placeholder="Create password..." required>
-          </div>
+        <div class="small-4 columns">
+          <input type="password" id="password" name="password" placeholder="Create password..." required>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -26,6 +32,4 @@
       </div>
     </div>
   </form>
-  </div>
 </body>
-</html>
