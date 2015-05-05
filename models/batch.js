@@ -5,6 +5,7 @@ var batchSchema = mongoose.Schema({
     exp_date: {type: Date, required: true, default: '' },
     notes: {type: String, required: true, default: ''},
     candyType: {type: String, required: true, default: ''},
+    batch: {type: String, required: true, default: ''},
     sugarId: {type: String, required: true, default: ''},
     butterId: {type: String, required: true, default: ''},
     almondId: {type: String, required: true, default: ''},
