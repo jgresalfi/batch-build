@@ -1,9 +1,12 @@
     <a href="/form">Create a new batch</a>
 
 
+
+
     <% for (var i = 0; i < batches.length; i++) { %>
+      <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
       <% var currentBatch = batches[i]; %>
-      <div class="todo-item" id="todo_<%= currentBatch._id %>">
+      <div class="todo-item" id="batch_<%= currentBatch._id %>">
         <div>
           Cook Date: <%= currentBatch.cook_date %>
         </div>
