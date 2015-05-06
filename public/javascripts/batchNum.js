@@ -1,4 +1,3 @@
-
 $( document ).ready(function() {
   $( "select" ).change(function () {
     var str = "";
