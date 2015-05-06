@@ -112,14 +112,16 @@ router.post("/login", function (req, res) {
           res.redirect("/list");
         })
         .fail(function (err) {
-          sendError(req, res, {errors: err.message}, "Failed")
+          sendError(req, res, {errors: err.message}, "Failed!")
         });
     })
 
     // After the database call is complete but failed
     .fail(function (err) {
       console.log('Failed looking up the user');
-      sendError(req, res, {errors: err.message}, "Failed")
+      // sendError(req, res, {errors: err.message}, "Failed!!")
+      //redirect to registartion page
+      res.redirect("/users/register");
     })
 });
 
