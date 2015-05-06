@@ -121,5 +121,13 @@ router.get('/', function (req,res,next) {
   sendBatchList(req, res, next);
 });
 
+//Handle a GET request from client to /logout
+router.get('/logout', function (req, res) {
+  var currentUser = UserController.getCurrentUser();
+  UserController.logout(this.username, this.password);  //Why does 'this' keyword work here but not currentUser.username, etc...
+  res.redirect("/");
+  console.log("User still logged in? --> " + this.username);
+});
+
 
 module.exports = router;
