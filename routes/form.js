@@ -36,7 +36,8 @@ form.post("/", function (req, res) {
 
 // Handle a DELETE request from the client to /form
 form.delete('/', function (req, res) {
-  batchList.find({ _id: req.body.batch_id }).remove(function (err) {
+  console.log(req.body);
+  BatchModel.find({ _id: req.body._id }).remove(function (err) {
 
     // Was there an error when removing?
     if (err) {

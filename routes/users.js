@@ -49,6 +49,7 @@ router.get("/register", function (req, res) {
 router.post("/register", function (req, res) {
   var newUser = new UserModel(req.body);
 
+
   newUser.save(function (err, user) {
     if (err) {
       sendError(req, res, err, "Failed to register user");
@@ -156,6 +157,5 @@ router.get('/logout', function (req, res) {
   res.redirect("/");
   console.log("User still logged in? --> " + this.username);
 });
-
 
 module.exports = router;
