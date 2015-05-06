@@ -21,6 +21,7 @@ User.prototype.login = function (username, password) {
 
         console.log('Save the user information in an instance variable called this.currentUser');
         this.currentUser = user;
+        console.log("Here ya go: " + this.currentUser);
 
         console.log('Resolve the promise so that the login process can continue.');
         deferred.resolve(user);
@@ -41,6 +42,7 @@ User.prototype.login = function (username, password) {
 
 User.prototype.logout = function (username, password) {
   this.currentUser = null;
+  console.log("logout function has been called!");
 };
 
 User.prototype.getCurrentUser = function () {

@@ -1,9 +1,10 @@
 var Q = require("q");
 var express = require('express');
-var app = express.Router();
+var router = express.Router();
 var UserController = require("../userController");
 var UserModel = require("../models/user");
 var BatchModel = require("../models/batch");
+var batchList = [];
 
 // Send the error message back to the client
 var sendError = function (req, res, err, message) {
@@ -39,13 +40,13 @@ var getUserTasks = function (userId) {
 
 
 // Handle the request for the registration form
-app.get("/register", function (req, res) {
+router.get("/register", function (req, res) {
   res.render("register");
 });
 
 
 // Handle the registration form post
-app.post("/register", function (req, res) {
+router.post("/register", function (req, res) {
   var newUser = new UserModel(req.body);
 
   newUser.save(function (err, user) {
@@ -59,7 +60,7 @@ app.post("/register", function (req, res) {
 
 
 // Handle the login action
-app.post("/login", function (req, res) {
+router.post("/login", function (req, res) {
 
   console.log('Hi, this is Node handling the /user/login route');
 
@@ -77,8 +78,9 @@ app.post("/login", function (req, res) {
       // Now find the tasks that belong to the user
       getUserTasks(validUser._id)
         .then(function (tasks) {
+          console.log("this is the valid ID " + validUser._id);
           // Render the todo list
-          res.redirect("/form");
+          res.redirect("/list");
         })
         .fail(function (err) {
           sendError(req, res, {errors: err.message}, "Failed")
@@ -92,20 +94,32 @@ app.post("/login", function (req, res) {
     })
 });
 
-app.get("/profile", function (req, res) {
-  var user = UserController.getCurrentUser();
-
-  if (user !== null) {
-    getUserTasks(user._id).then(function (tasks) {
-      res.render("userProfile", {
-        username: user.username,
-        tasks: tasks
+// Send the batch list back to the client via the for loop in the todoList.ejs
+var sendBatchList = function (req, res, next) {
+  console.log("Send batch list called");
+  BatchModel.find({}, function (err, batches) {
+    if (err) {
+      console.log(err);
+      sendError(req, res, err, "Could not get batch list");
+    } else {
+      res.render("list", {
+        title: "List of batches",
+        message: "Batches you still need to make",
+        batches: batches
       });
-    });
-  } else {
-    res.redirect("/");
-  }
+    }
+  });
+};
 
+// Handle a GET request from the client to /list
+router.get('/', function (req,res,next) {
+  // Is the user logged in?
+  if (UserController.getCurrentUser() === null) {
+    return res.redirect("/");
+  }
+  console.log("User value: " + UserController.getCurrentUser());  //seems to lose the user value here when func is in list.js
+  sendBatchList(req, res, next);
 });
 
-module.exports = app;
+
+module.exports = router;
