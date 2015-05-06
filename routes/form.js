@@ -34,10 +34,9 @@ form.post("/", function (req, res) {
   });
 });
 
-// Handle a DELETE request from the client to /batch
+// Handle a DELETE request from the client to /form
 form.delete('/', function (req, res) {
-  batchList.find({ _id: req.body.batch_id })
-      .remove(function (err) {
+  batchList.find({ _id: req.body.batch_id }).remove(function (err) {
 
     // Was there an error when removing?
     if (err) {
