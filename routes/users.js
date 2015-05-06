@@ -53,7 +53,35 @@ router.post("/register", function (req, res) {
     if (err) {
       sendError(req, res, err, "Failed to register user");
     } else {
-      res.redirect("/");
+      //attemp to login new user after registration
+
+      // Handle the login action
+
+        // Attempt to log the user is with provided credentials
+        UserController.login(req.body.username, req.body.password)
+
+          // After the database call is complete and successful,
+          // the promise returns the user object
+          .then(function (validUser) {
+
+            console.log('Ok, now we are back in the route handling code and have found a user');
+            console.log('validUser',validUser);
+            console.log('Find any tasks that are assigned to the user');
+
+            // Now find the tasks that belong to the user
+            getUserTasks(validUser._id)
+              .then(function (tasks) {
+                console.log("this is the valid ID " + validUser._id);
+                // Render the todo list
+                res.redirect("/list");
+              })
+              .fail(function (err) {
+                sendError(req, res, {errors: err.message}, "Failed")
+              });
+          })
+
+      //end of attempt to login new user after registration and then redirect to list page
+      res.redirect("/list");
     }
   });
 });
