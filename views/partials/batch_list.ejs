@@ -1,66 +1,60 @@
-    <body class= "list_page">
-
-    <a href="/form">Create a new batch</a>
-
-    <ul class="accordion" data-accordion>
-
+<body class= "list_page">
+  <div class="row appTitle_icon">
+    <img src="../images/measure-cup50.png" alt="measuring_cup_pic" class="pitcher_pic">
+    <h2 class="appTitle small-3 column end">BatchBuilder</h2>
+  </div>
+  <a href="/form">Create a new batch</a>
+  <ul class="accordion" data-accordion>
     <% for (var i = 0; i < batches.length; i++) { %>
       <% var currentBatch = batches[i]; %>
-
       <li class="accordion-navigation">
         <a href="#panel_<%= currentBatch._id %>">Batch: <%= currentBatch.batch %></a>
         <div id="panel_<%= currentBatch._id %>" class="content">
-
-      <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
-      <div class="batch" id="batch_<%= currentBatch._id %>">
-        <div>
-          Cook Date: <%= currentBatch.cook_date %>
-        </div>
-        <div>
-          Expiration Date: <%= currentBatch.exp_date %>
-        </div>
-        <div>
-          Notes: <%= currentBatch.notes %>
-        </div>
-        <div>
-          Candy Type: <%= currentBatch.candyType %>
-        </div>
-        <div>
-          Batch Id: <%= currentBatch.batch %>
-        </div>
-        <div>
-          Sugar: <%= currentBatch.sugarId %>
-        </div>
-        <div>
-          Butter: <%= currentBatch.butterId %>
-        </div>
-        <div>
-          Almonds: <%= currentBatch.almondId %>
-        </div>
-        <div>
-          Chocolate: <%= currentBatch.chocolateId %>
-        </div>
-        <div>
-          Dust: <%= currentBatch.dustId %>
-        </div>
-        <div>
-          Cook Order: <%= currentBatch.cook_order %>
-        </div>
-        <div>
-          User: <%= currentBatch.user %>
-        </div>
-      </div>
-        <div class="actions">
-          <a class="deleteButton" id="<%= currentBatch._id %>">Delete</a>
-          <a class="editButton" id="<%= currentBatch._id %>">Edit</a>
-        </div>
-      </div>
-
+          <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
+          <div class="batch" id="batch_<%= currentBatch._id %>">
+            <div>
+              Cook Date: <%= currentBatch.cook_date %>
+            </div>
+            <div>
+              Expiration Date: <%= currentBatch.exp_date %>
+            </div>
+            <div>
+              Notes: <%= currentBatch.notes %>
+            </div>
+            <div>
+              Candy Type: <%= currentBatch.candyType %>
+            </div>
+            <div>
+              Batch Id: <%= currentBatch.batch %>
+            </div>
+            <div>
+              Sugar: <%= currentBatch.sugarId %>
+            </div>
+            <div>
+              Butter: <%= currentBatch.butterId %>
+            </div>
+            <div>
+              Almonds: <%= currentBatch.almondId %>
+            </div>
+            <div>
+              Chocolate: <%= currentBatch.chocolateId %>
+            </div>
+            <div>
+              Dust: <%= currentBatch.dustId %>
+            </div>
+            <div>
+              Cook Order: <%= currentBatch.cook_order %>
+            </div>
+            <div>
+              User: <%= currentBatch.user %>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="deleteButton" id="<%= currentBatch._id %>">Delete</a>
+            <a class="editButton" id="<%= currentBatch._id %>">Edit</a>
+          </div>
         </div>
       </li>
-
     <% } %>
-
-
-    </ul>
-  </body>
+  </ul>
+</body>
