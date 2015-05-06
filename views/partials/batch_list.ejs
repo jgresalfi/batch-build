@@ -8,14 +8,23 @@
     <a href="/form">Create a new batch</a>
     <a href="/users/logout" id="logoutUser" class="logout">Click here to log out</a>
 
-    <ul class="accordion small-block-grid-1 medium-block-grid-3" data-accordion >
+  <div class="row">
+    <div class="small-6 small-centered columns">
+
     <% for (var i = 0; i < batches.length; i++) { %>
       <% var currentBatch = batches[i]; %>
-      <li class="accordion-navigation">
-        <a href="#panel_<%= currentBatch._id %>">Batch: <%= currentBatch.batch %></a>
-        <div id="panel_<%= currentBatch._id %>" class="content active">
+
+
+        <div id="panel_<%= currentBatch._id %>" class="panel callout">
           <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
           <div class="batch" id="batch_<%= currentBatch._id %>">
+
+            <div>
+              Batch Id: <%= currentBatch.batch %>
+            </div>
+            <div>
+              Candy Type: <%= currentBatch.candyType %>
+            </div>
             <div>
               Cook Date: <%= currentBatch.cook_date %>
             </div>
@@ -24,12 +33,6 @@
             </div>
             <div>
               Notes: <%= currentBatch.notes %>
-            </div>
-            <div>
-              Candy Type: <%= currentBatch.candyType %>
-            </div>
-            <div>
-              Batch Id: <%= currentBatch.batch %>
             </div>
             <div>
               Sugar: <%= currentBatch.sugarId %>
@@ -58,13 +61,9 @@
             <a class="editButton" id="<%= currentBatch._id %>">Edit</a>
           </div>
         </div>
-      </li>
-    <% } %>
-  </ul>
 
-  <script>
-    $('#myAccordionGroup').on('toggled', function (event, accordion) {
-      console.log(accordion);
-    });
-  </script>
+    <% } %>
+  </div>
+  </div><!-- end of row -->
+
 </body>
