@@ -3,7 +3,7 @@ $(document).ready(function() {
   // User clicked on an edit button
   $(".editButton").click(function () {
     console.log("is this thing firing?");
-    window.location.href = "panel_" + $(this)[0].id;
+    window.location.href = '/form/' + $(this)[0].id;
   });
 
   // User clicked on a delete button
@@ -22,6 +22,4 @@ $(document).ready(function() {
       }
     });
   });
-
-
 });

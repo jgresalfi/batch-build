@@ -12,10 +12,12 @@
 
     <form method="POST" action="/form" id="batchForm">
 
+    <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
+
       <div class="row">
         <div class="large-12 columns">
           <label>Type of Candy
-            <select id="candyType" name="candyType" required>
+            <select id="candyType" name="candyType" value="candyType" required>
               <option value="toffee">Toffee</option>
               <option value="caramel">Caramel</option>
               <option value="praline">Praline</option>
@@ -27,17 +29,17 @@
       <div class="row">
         <div class="large-4 columns">
           <label>Production Date
-            <input name="cook_date" id="cook_date" type="date" placeholder=""  required/>
+            <input name="cook_date" id="cook_date" type="date" placeholder="" value="<%= currentBatch.cook_date %>" required/>
           </label>
         </div>
         <div class="large-4 columns">
           <label>Expiration Date
-            <input name="exp_date" id="exp_date" type="date" placeholder=""  required/>
+            <input name="exp_date" id="exp_date" type="date" placeholder="" value="<%= currentBatch.exp_date %>" required/>
           </label>
         </div>
         <div class="large-4 columns">
           <label>Cook order
-            <input name="cook_order" id="cook_order" type="number" placeholder=""  required/>
+            <input name="cook_order" id="cook_order" type="number" placeholder="" value="<%= currentBatch.cook_order %>" required/>
           </label>
         </div>
       </div>
@@ -45,7 +47,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Batch
-            <input name="batch" id="batchNum" type="text" placeholder=""  required/>
+            <input name="batch" id="batchNum" type="text" placeholder="" value="<%= currentBatch.batch %>" required/>
           </label>
         </div>
       </div>
@@ -53,7 +55,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Prepared By</label>
-          <input name="user" id="user" type="text" placeholder=""  required/>
+          <input name="user" id="user" type="text" placeholder="" value="<%= currentBatch.user %>" required/>
         </div>
       </div>
 
@@ -67,8 +69,6 @@
         </div>
       </div>
 
-
-
       <div class="row">
         <div class="small-12 columns">
           <div class="row">
@@ -76,7 +76,7 @@
               <label for="right-label" class="right inline">Sugar</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" name="sugarId" id="sugarId" placeholder="lot infomation" required>
+              <input type="text" name="sugarId" id="sugarId" placeholder="lot infomation" value="<%= currentBatch.sugarId %>" required>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@
               <label for="right-label" class="right inline">Butter</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" name="butterId" id="butterId" placeholder="lot infomation" required>
+              <input type="text" name="butterId" id="butterId" placeholder="lot infomation" value="<%= currentBatch.butterId %>" required>
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@
               <label for="right-label" class="right inline">Almonds</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="almondId" name="almondId" placeholder="lot infomation" required>
+              <input type="text" id="almondId" name="almondId" placeholder="lot infomation" value="<%= currentBatch.almondId %>" required>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@
               <label for="right-label" class="right inline">Chocolate</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" id="chocolateId" name="chocolateId" placeholder="lot infomation" required>
+              <input type="text" id="chocolateId" name="chocolateId" placeholder="lot infomation" value="<%= currentBatch.chocolateId %>" required>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
               <label for="right-label" class="right inline">Almond Dust</label>
             </div>
             <div class="small-9 columns">
-              <input type="text" name="dustId" id="dustId" placeholder="lot infomation" required>
+              <input type="text" name="dustId" id="dustId" placeholder="lot infomation" value="<%= currentBatch.dustId %>" required>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@
       <div class="row">
         <div class="large-12 columns">
           <label>Production Notes
-            <textarea name="notes" id="notes"  placeholder="" required></textarea>
+            <textarea name="notes" id="notes"  placeholder="" value="<%= currentBatch.notes %>" required></textarea>
           </label>
         </div>
       </div>
