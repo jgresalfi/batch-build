@@ -16,7 +16,7 @@ var sendError = function (req, res, err, message) {
   });
 };
 
-/* GET home page. */
+/* GET batch form to edit. */
 form.get('/', function(req, res, next) {
   res.render('form', {
     currentBatch:{

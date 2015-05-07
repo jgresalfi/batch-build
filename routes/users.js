@@ -24,17 +24,16 @@ var getUserTasks = function (userId) {
 
   console.log('Another promise to let the calling function know when the database lookup is complete');
 
-  BatchModel.find({user: userId}, function (err, tasks) {
+  BatchModel.find({user: userId}, function (err, batch) {
     if (!err) {
-      console.log('Tasks found = ' + tasks.length);
+      console.log('Batches found = ' + batch.length);
       console.log('No errors when looking up tasks. Resolve the promise (even if none were found).');
-      deferred.resolve(tasks);
+      deferred.resolve(batch);
     } else {
-      console.log('There was an error looking up tasks. Reject the promise.');
+      console.log('There was an error looking up batches. Reject the promise.');
       deferred.reject(err);
     }
   })
-
   return deferred.promise;
 };
 
@@ -48,13 +47,12 @@ router.get("/register", function (req, res) {
 // Handle the registration form post
 router.post("/register", function (req, res) {
   var newUser = new UserModel(req.body);
-
-
   newUser.save(function (err, user) {
     if (err) {
       sendError(req, res, err, "Failed to register user");
     } else {
-      //attemp to login new user after registration
+
+      //Attempt to login new user after registration
 
       // Handle the login action
 
