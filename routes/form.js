@@ -69,7 +69,7 @@ form.post("/", function (req, res) {
       sendError(req, res, err, "Failed to add new batch");
     } else {
       console.log(newBatch ,"Success!");
-      res.redirect("/form");
+      res.redirect("/list");
     }
   });
 });
