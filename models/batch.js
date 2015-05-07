@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
 var batchSchema = mongoose.Schema({
-    cook_date: {type: Date, required: true, default: Date.now },
-    exp_date: {type: Date, required: true, default: '' },
+    cook_date: {type: String, required: true, default: '' },
+    exp_date: {type: String, required: true, default: '' },
     notes: {type: String, required: true, default: ''},
     candyType: {type: String, required: true, default: ''},
     batch: {type: String, required: true, default: ''},
