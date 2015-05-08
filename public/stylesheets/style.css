@@ -1,4 +1,5 @@
 
+/* CSS for general page styles */
 .login_page,
 .reg_page,
 .form_page,
@@ -10,33 +11,6 @@
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-}
-
-.reg_tagline {
-  color: white;
-  font-weight: 200;
-  margin-top: 15px;
-}
-
-.panel.callout {
-  border-style: none;
-  border-width: none;
-  border-color: none;
-  margin-bottom: 1.25rem;
-  padding: 1.25rem;
-  background-color: rgba(225, 225, 220, 0.5);
-  color:white;
-  border-radius: 2px;
-}
-
-.form_label,
-.ingredient_heading {
-  color: white;
-}
-
-a {
-  color: white;
-  text-decoration: underline;
 }
 
 .appTitle {
@@ -52,7 +26,38 @@ a {
 .appTitle_icon {
     margin-bottom: 11px;
 }
+/* --end of section-- */
 
+
+/* CSS for batch item panels and batch form elements */
+.panel.callout {
+  border-style: none;
+  border-width: none;
+  border-color: none;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background-color: rgba(225, 225, 220, 0.5);
+  color:white;
+  border-radius: 2px;
+}
+
+.scroll-div {
+  overflow-y: scroll;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+.form_label,
+.ingredient_heading {
+  color: white;
+}
+/* --end of section-- */
+
+
+/* CSS for registration page */
 #fullname {
   min-width: 250px;
 }
@@ -69,6 +74,9 @@ a {
   margin-top: 10px;
 }
 
-.scroll-div {
-  overflow-y: scroll;
+.reg_tagline {
+  color: white;
+  font-weight: 200;
+  margin-top: 15px;
 }
+/* --end of section-- */
