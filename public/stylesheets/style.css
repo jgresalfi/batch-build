@@ -39,6 +39,11 @@
   background-color: rgba(225, 225, 220, 0.5);
   color:white;
   border-radius: 2px;
+  padding-bottom: 10px
+}
+
+.button-group.stack-for-small > li {
+  margin-top: 20px;
 }
 
 .scroll-div {

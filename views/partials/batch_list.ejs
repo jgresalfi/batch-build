@@ -56,10 +56,10 @@
               User: <%= currentBatch.user %>
             </div>
           </div>
-          <div class="actions">
-            <a class="deleteButton" id="<%= currentBatch._id %>">Delete</a>
-            <a class="editButton" id="<%= currentBatch._id %>">Edit</a>
-          </div>
+          <ul class="actions button-group stack-for-small even-2">
+            <li class="button_cont"><a class="deleteButton button small" id="<%= currentBatch._id %>">Delete</a></li class="button_cont">
+            <li class="button_cont"><a class="editButton button small" id="<%= currentBatch._id %>">Edit</a></li>
+          </ul>
         </div>
 
     <% } %>
