@@ -45,9 +45,9 @@
   overflow-y: scroll;
 }
 
-a {
+.panel.callout a:not(.button) {
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .form_label,
