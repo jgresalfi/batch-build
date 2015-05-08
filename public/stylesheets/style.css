@@ -1,6 +1,8 @@
 
 .login_page,
-.reg_page {
+.reg_page,
+.form_page,
+.list_page {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
@@ -16,20 +18,15 @@
   margin-top: 15px;
 }
 
-.form_page {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: white;
-  background: url("../images/whisk.jpg") no-repeat;
-  background-size: cover;
-}
-
-.list_page {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: blue;
-  background: url("../images/whisk.jpg") no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
+.panel.callout {
+  border-style: none;
+  border-width: none;
+  border-color: none;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background-color: rgba(225, 225, 220, 0.5);
+  color:white;
+  border-radius: 2px;
 }
 
 a {
