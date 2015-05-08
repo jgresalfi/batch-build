@@ -29,6 +29,11 @@
   border-radius: 2px;
 }
 
+.form_label,
+.ingredient_heading {
+  color: white;
+}
+
 a {
   color: white;
   text-decoration: underline;
