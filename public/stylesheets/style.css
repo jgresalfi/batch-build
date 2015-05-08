@@ -4,7 +4,7 @@
 .reg_page,
 .form_page,
 .list_page {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: white;
   background: url("../images/whisk.jpg") no-repeat;
@@ -21,11 +21,30 @@
 .pitcher_pic {
   float: left;
   margin-top: 5px;
+  margin-left: 15px;
 }
 
 .appTitle_icon {
     margin-bottom: 11px;
 }
+
+.top-bar {
+  height: 3.75rem; //Overiding Foundation ".top-bar .name h1" classes to style our h1 element
+}
+
+.top-bar .name h1 {
+  margin-left: -10px;
+}
+
+.top-bar h1 a {
+  font-size: 1.75rem;
+  padding: 6px 0 0 5px !important; //Overiding some seriously specific Foundation styles for ".top-bar h1 a" padding
+}
+
+.bb_nav {
+  margin-bottom: 75px;
+}
+
 /* --end of section-- */
 
 
@@ -77,6 +96,10 @@
 
 .register_div {
   margin-top: 10px;
+}
+
+.register_div a {
+  color: white;
 }
 
 .reg_tagline {
