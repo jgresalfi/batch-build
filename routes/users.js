@@ -141,10 +141,8 @@ var theUser = UserController.getCurrentUser();
       sendError(req, res, err, "Could not get batch list");
     } else {
       res.render("list", {
-        title: "List of batches",
-        message: "Batches you still need to make",
         batches: batches,
-        username: theUser.username
+        loginname: theUser.username
       });
     }
   });
