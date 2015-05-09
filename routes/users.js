@@ -108,6 +108,7 @@ router.post("/login", function (req, res) {
           console.log("this is the valid ID " + validUser._id);
           // Render the todo list
           res.redirect("/list");
+          console.log("This is the valid username " + validUser.username);
         })
         .fail(function (err) {
           sendError(req, res, {errors: err.message}, "Failed!")
@@ -125,8 +126,16 @@ router.post("/login", function (req, res) {
 
 // Send the batch list back to the client via the for loop in the todoList.ejs
 var sendBatchList = function (req, res, next) {
+
+var theUser = UserController.getCurrentUser();
+
   console.log("Send batch list called");
   BatchModel.find({}, function (err, batches) {
+    //Loop over the tasks array and put in the username instead of the user._id for each task
+    for (var i = 0; i < batches.length; i++) {
+      batches[i].user = theUser.username;
+    }
+
     if (err) {
       console.log(err);
       sendError(req, res, err, "Could not get batch list");
@@ -134,7 +143,8 @@ var sendBatchList = function (req, res, next) {
       res.render("list", {
         title: "List of batches",
         message: "Batches you still need to make",
-        batches: batches
+        batches: batches,
+        username: theUser.username
       });
     }
   });

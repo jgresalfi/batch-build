@@ -16,9 +16,14 @@
 
 /*Top-bar nav styles*/
 
-.appTitle {
+.appTitle,
+.user_callout_h4 {
   color: white;
   font-weight: 200;
+}
+
+.user_callout {
+  margin-right: 25px;
 }
 
 .pitcher_pic {
