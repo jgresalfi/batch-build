@@ -7,11 +7,6 @@
 
   <% include partials/top_bar_form.ejs %>
 
-    <div class="row appTitle_icon">
-      <img src="../images/measure-cup50.png" alt="measuring_cup_pic" class="pitcher_pic">
-      <h2 class="appTitle small-3 column end">BatchBuilder</h2>
-    </div>
-
     <form method="POST" action="/form" id="batchForm">
 
     <input type="hidden" name="db_id" value="<%= currentBatch._id %>">
