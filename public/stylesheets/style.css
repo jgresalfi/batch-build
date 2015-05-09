@@ -16,14 +16,22 @@
 
 /*Top-bar nav styles*/
 
-.appTitle,
-.user_callout_h4 {
-  color: white;
-  font-weight: 200;
+.appTitle {
+  /*color: white;*/
+  font-weight: 100;
+  margin-top: 10px;
 }
 
-.user_callout {
-  margin-right: 25px;
+.top-bar-section ul {
+  margin-left: 25px;
+}
+
+.user_callout_aside {
+  font-size: .95rem;
+  font-family: "Helvetica Neue Light", Arial, sans-serif;
+  margin-top: 10px;
+  color: white;
+  font-weight: 100;
 }
 
 .pitcher_pic {
