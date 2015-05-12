@@ -12,7 +12,7 @@ var batchSchema = mongoose.Schema({
     chocolateId: {type: String, required: true, default: ''},
     dustId: {type: String, required: true, default: ''},
     cook_order: {type: Number, required: true, default: '' },
-    user: {type: String, required: true}
+    user: {type: String, required: true, default: '' }
 });
 
 var Batch = mongoose.model('Batch', batchSchema);
